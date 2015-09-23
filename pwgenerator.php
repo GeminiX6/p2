@@ -4,9 +4,6 @@ error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
 ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
 $numWords = (int)4;    //default number of words to create a password with
-$useNum = FALSE;  //whether to add a number to the end of the password or not
-$useSym = FALSE;  //whether to add a symbol to the end of the password or not
-
 
 $pwWords = Array(
     0 => "baby",
@@ -53,14 +50,13 @@ $symArray = Array(
     7 => "*",
 );
 
-$finalPW = ""; //final value to concatenate and output as a password
+$finalPW = ""; //final value to concatenate and output as a password, starts blank
 
 $randPW = array_rand($pwWords, $numWords);
 
 foreach ($randPW as $key => $value) {
-  $finalPW = $finalPW . $pwWords[$value] . " "; //add each randomized value in
+  $finalPW .= $pwWords[$value] . " "; //add each randomized value in
 };
-
 
 
  ?>

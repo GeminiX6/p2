@@ -1,3 +1,8 @@
+<?php
+error_reporting(-1); # Report all PHP errors
+ini_set('display_errors', 1);
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -42,23 +47,25 @@
   <br>
 
 
-<form method="POST" action="pwgenerator.php">
+<form method="post" action="index.php">
 
-  <label>How many words do you want in the password? (Max 9) <input maxlength=1 type="text" name="totalWords"></label>
+  <label>How many words do you want in the password? (Max 9) <input maxlength=1 type="text" name="totalWords" id="totalWords"></label>
   <br>
-  <label>Add a number? <input type="checkbox" name="checkNum"></label>
+  <label>Add a number <input type="checkbox" name="checkNum" id="checkNum"></label>
   <br>
-  <label>Add a symbol? <input type="checkbox" name="checkSym"></label>
+  <label>Add a symbol <input type="checkbox" name="checkSym" id="checkSym"></label>
   <br>
   <input type="submit" value="Generate Password">
 
 </form>
 
+<pre>
+    <?php print_r($_POST); ?>
+</pre>
+
 <h1>
 <p class="pwdisplay">
- <?php
- echo $finalPW;
-  ?>
+ <?php echo $finalPW; ?>
 </p>
 </h1>
 
