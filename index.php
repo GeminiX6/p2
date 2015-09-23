@@ -44,24 +44,22 @@ ini_set('display_errors', 1);
 <div class="wrapper">
 
 <h1>XKCD-Style Password Generator</h1>
-  <br>
+  <br><br>
 
 
 <form method="post" action="index.php">
 
-  <label>How many words do you want in the password? (Max 9) <input maxlength=1 type="text" name="totalWords" id="totalWords"></label>
-  <br>
+  <label>How many words do you want in the password? (Min 2, Max 9) <input maxlength=1 type="text" name="totalWords" id="totalWords"></label>
+  <br><br>
   <label>Add a number <input type="checkbox" name="checkNum" id="checkNum"></label>
-  <br>
+  <br><br>
   <label>Add a symbol <input type="checkbox" name="checkSym" id="checkSym"></label>
-  <br>
+  <br><br>
   <input type="submit" value="Generate Password">
 
 </form>
 
-<pre>
-    <?php print_r($_POST); ?>
-</pre>
+<p>If nothing is entered (or values outside of 2 and 9 are entered) the page will generate a 4-word password with no extra characters.</p>
 
 <h1>
 <p class="pwdisplay">
