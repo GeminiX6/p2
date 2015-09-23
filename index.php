@@ -22,6 +22,8 @@
         color: #009900;
         background-color: #D2D2D2;
         display: inline-block;
+        font-size: 200%;
+        font-family: sans-serif;
     }
 
     .wrapper
@@ -56,15 +58,16 @@
 
 <p>If nothing is entered (or values outside of 2 and 9 are entered) the page will generate a 4-word password with no extra characters.</p>
 
-<h1>
+
 <p class="pwdisplay">
  <?php echo $finalPW; ?>
 </p>
-</h1>
+
+<br><br>
 
 <a href= "http://xkcd.com/936/">Link to the relevant comic!</a>
 
-<img src= "password_strength.png">
+<img src= "password_strength.png" alt="XKCD Password Strength">
 
 </div>
 
