@@ -50,13 +50,28 @@ $symArray = Array(
     7 => "*",
 );
 
+
+
 $finalPW = ""; //final value to concatenate and output as a password, starts blank
+
+if($_POST["totalWords"] > 0){
+    $numWords = $_POST["totalWords"];
+}
+else {
+  $numWords = (int)4;
+}
 
 $randPW = array_rand($pwWords, $numWords);
 
 foreach ($randPW as $key => $value) {
   $finalPW .= $pwWords[$value] . " "; //add each randomized value in
 };
+
+if(isset($_POST["checkNum"])){
+
+  $tempNum = rand(0,9);
+  $finalPW .= $tempNum;
+}
 
 
  ?>
