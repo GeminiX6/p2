@@ -13,7 +13,7 @@
     {
       display: block;
       margin: auto;
-      width: 60%;
+      width: 50%;
     }
 
     .pwdisplay
@@ -28,27 +28,43 @@
     {
 			text-align: center;
 		}
-    </style>
 
-    <?php require "pwgenerator.php"; ?>
+  </style>
+
+  <?php require "pwgenerator.php"; ?>
 
 </head>
 <body>
 
 <div class="wrapper">
 
-<h1>XKCD-Style Password Generator
+<h1>XKCD-Style Password Generator</h1>
+  <br>
 
-<form>
 
+<form method="POST" action="pwgenerator.php">
+
+  <label>How many words do you want in the password? (Max 9) <input maxlength=1 type="text" name="totalWords"></label>
+  <br>
+  <label>Add a number? <input type="checkbox" name="checkNum"></label>
+  <br>
+  <label>Add a symbol? <input type="checkbox" name="checkSym"></label>
+  <br>
+  <input type="submit" value="Generate Password">
 
 </form>
 
+<h1>
 <p class="pwdisplay">
- test - display - for - password
+ <?php
+ echo $finalPW;
+  ?>
 </p>
+</h1>
 
-<a href= "http://xkcd.com/936/"><img src= "password_strength.png"></a>
+<a href= "http://xkcd.com/936/">Link to the relevant comic!</a>
+
+<img src= "password_strength.png">
 
 </div>
 
